@@ -1,0 +1,19 @@
+# import all manifests in the current directory and its subdirectories
+
+resources:
+- ./deployment.yaml
+- ./service.yaml
+- ./serviceaccount.yaml
+- ./role.yaml
+- ./rolebinding.yaml
+- ./sidecar-cm.yaml
+
+# generate configmap from flows.json
+# add label to the generated configmap
+configMapGenerator:
+- name: flow-config
+  files:
+  - flows.json 
+# add label to the generated configmap
+patchesStrategicMerge:
+- ./configmap-patch.yaml

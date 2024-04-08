@@ -1,0 +1,158 @@
+[
+    {
+        "id": "d2c51e5f2a28ce73",
+        "type": "group",
+        "z": "f6f2187d.f17ca8",
+        "name": "App: Animationen",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "2ceeacb8.9e020c",
+            "a28b5445.778e1",
+            "94974bcd9c208d22",
+            "bc6d1717ac8145d2",
+            "eb1d73edc0650741"
+        ],
+        "x": 1014,
+        "y": 479,
+        "w": 1452,
+        "h": 82
+    },
+    {
+        "id": "2ceeacb8.9e020c",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "g": "d2c51e5f2a28ce73",
+        "name": "Awtrix: Zufälliger Effekt",
+        "func": "msg.payload = { \"effect\": \"LookingEyes\", \"duration\": 5 };\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 520,
+        "wires": [
+            [
+                "94974bcd9c208d22"
+            ]
+        ]
+    },
+    {
+        "id": "a28b5445.778e1",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "g": "d2c51e5f2a28ce73",
+        "name": "Alle 10 Sekunden",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1150,
+        "y": 520,
+        "wires": [
+            [
+                "2ceeacb8.9e020c"
+            ]
+        ]
+    },
+    {
+        "id": "94974bcd9c208d22",
+        "type": "http request",
+        "z": "f6f2187d.f17ca8",
+        "g": "d2c51e5f2a28ce73",
+        "name": "AwtrixUlanzi/CustomApp",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://192.168.1.141/api/custom?name=effect",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Content-Type",
+                "keyValue": "",
+                "valueType": "other",
+                "valueValue": "application/json"
+            }
+        ],
+        "x": 1650,
+        "y": 520,
+        "wires": [
+            [
+                "bc6d1717ac8145d2"
+            ]
+        ],
+        "icon": "font-awesome/fa-align-left"
+    },
+    {
+        "id": "bc6d1717ac8145d2",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "g": "d2c51e5f2a28ce73",
+        "name": "Awtrix: Zufälliger Effekt",
+        "func": "msg.payload = { \"text\": \"v1.0.0\", \"duration\": 5 };\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2060,
+        "y": 520,
+        "wires": [
+            [
+                "eb1d73edc0650741"
+            ]
+        ]
+    },
+    {
+        "id": "eb1d73edc0650741",
+        "type": "http request",
+        "z": "f6f2187d.f17ca8",
+        "g": "d2c51e5f2a28ce73",
+        "name": "AwtrixUlanzi/CustomApp",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://192.168.1.141/api/custom?name=a2",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Content-Type",
+                "keyValue": "",
+                "valueType": "other",
+                "valueValue": "application/json"
+            }
+        ],
+        "x": 2330,
+        "y": 520,
+        "wires": [
+            []
+        ],
+        "icon": "font-awesome/fa-align-left"
+    }
+]

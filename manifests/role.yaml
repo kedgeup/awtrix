@@ -1,0 +1,19 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: node-red
+  labels:
+    app.kubernetes.io/name: node-red
+    app.kubernetes.io/instance: node-red
+    app.kubernetes.io/version: "3.1.3"
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - secrets
+      - configmaps
+      - services
+    verbs:
+      - get
+      - list
+      - watch

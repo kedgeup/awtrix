@@ -1,0 +1,10 @@
+# add labels to config map
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: flow-config
+  labels:
+    node-red-settings: "1"
+
+    
+
