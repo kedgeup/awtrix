@@ -133,7 +133,7 @@
         "method": "POST",
         "ret": "obj",
         "paytoqs": "ignore",
-        "url": "http://192.168.1.141/api/custom?name=a2",
+        "url": "http://192.168.178.121/api/custom?name=a2",
         "tls": "",
         "persist": false,
         "proxy": "",
