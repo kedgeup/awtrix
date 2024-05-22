@@ -101,7 +101,7 @@ spec:
               - key: kubernetes.io/hostname
                 operator: In
                 values: 
-                - edgenode1
+                - futro1
       tolerations:
         - key: edgefarm.io
           operator: Exists
