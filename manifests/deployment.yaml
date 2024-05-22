@@ -61,7 +61,7 @@ spec:
             runAsUser: 10003
             seccompProfile:
               type: RuntimeDefault
-          image: "docker.io/nodered/node-red:3.1.7"
+          image: "docker.io/nodered/node-red:3.1.8"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
